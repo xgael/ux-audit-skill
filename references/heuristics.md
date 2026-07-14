@@ -117,6 +117,8 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Buscador decorativo | **Command palette ⌘K** | NN#6, NN#7, Jakob |
 | Lista para dato temporal | **Match al modelo mental** (calendario/kanban/árbol) | NN#2 |
 | Submit inválido permitido | **Error prevention** (validación inline, disable, guardas) | NN#5 |
+| Input acepta basura (letras en teléfono, `@`/`*` en nombre, texto donde va número) | **Constrain al dominio del campo**: `inputMode`/`type` correcto + patrón/filtrado + normalizar (forgiving) | NN#5, Postel |
+| `max`/`maxLength` "advisory" que se puede exceder (ej. "máx 8" pero teclea más) | **Enforzar límites de verdad** (validar en submit; `max` de `type=number` NO capea el tecleo) | NN#5 |
 | Todo el detalle de golpe | **Progressive disclosure** (panel/expand bajo demanda) | NN#8, Miller |
 | Form de crear/editar que se despliega inline y empuja la lista | **Modal / dialog focalizado** (o side sheet) con focus-trap, `aria-modal`, Esc y restaurar foco | NN#1, NN#8, Apple/Material dialogs |
 | Confirms modales para todo | **Undo optimista** > confirm (confirm solo si es irreversible) | NN#3 |
@@ -150,6 +152,14 @@ Recorré cada pantalla:
     que se despliega inline empujando la lista. Excepciones: edición de 1 campo (inline) o flujo
     multi-paso (página propia). El modal debe tener focus-trap, `aria-modal`, cerrar con Esc y
     devolver el foco al disparador.
+22. **Cada input acota su dominio y NO acepta basura**: teléfono sólo dígitos/`+`/`-`/espacio
+    (`inputMode="tel"`), nombre sin `@ * /` ni números fuera de lugar, email `type=email`, número
+    `inputMode=numeric` con `min`/`max`, monto ≥0, `%` entre 0 y 100. Con feedback inline
+    (`aria-invalid`) y submit deshabilitado si es inválido.
+23. **Los límites se enforzan de verdad**, no son advisory: probá teclear MÁS del máximo (ej. "máx 8
+    caracteres") y valores fuera de rango — el `max` de `<input type=number>` no capea el tecleo y
+    `maxLength` no aplica a number, así que debe haber validación real en submit. Forgiving format:
+    aceptar variaciones razonables y normalizar (no rechazar por un espacio o un guión).
 
 ---
 

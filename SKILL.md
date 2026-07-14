@@ -59,6 +59,19 @@ Referencias (cargalas al auditar/arreglar):
      hardcodeado que rompa dark mode.
    - **Command palette ⌘K** en vez de un buscador decorativo.
    - **Match al modelo mental**: dato temporal → calendario (no lista); jerárquico → árbol; etc.
+   - **Inputs restringidos y validados por tipo** (prevención de error, no solo mensaje): cada
+     campo acota su entrada al dominio que corresponde y NO acepta basura —
+     teléfono sólo dígitos/`+`/espacios/guiones (`inputMode="tel"` + filtrar/patrón), nombre sin
+     `@ * / <>` ni dígitos fuera de lugar, email `type="email"` + validación, número
+     `inputMode="numeric"` con `min`/`max` reales, monto ≥0 y decimales controlados, %
+     `0<v≤100`. **Los límites deben ENFORZARSE de verdad**: `max`/`min` de un `<input number>`
+     son advisory (dejan teclear fuera de rango) y `maxLength` no aplica a `type=number` → validar
+     en el submit y/o `maxLength` en text; el clásico "pide máx 8 pero deja poner más" es esto.
+     Feedback inline (`aria-invalid` + mensaje) y submit deshabilitado si es inválido. Matiz
+     **forgiving format** (Postel): aceptá variaciones razonables y normalizá (teléfono con o sin
+     guiones), no rechaces por un espacio. Reusá el helper de validación del proyecto
+     (`lib/validation.ts`: `validateField`/`filterInput`) si existe. Nota: esto es UX (prevención);
+     NO reemplaza la validación de servidor (seguridad).
    - **Crear/editar en modal, no formulario inline**: el botón "Nuevo/Crear" abre un modal
      (o side sheet) con el formulario — NO despliega un form debajo que empuja la lista y
      mezcla crear con explorar. El modal enfoca la tarea, preserva el contexto de la lista y
