@@ -59,6 +59,12 @@ Referencias (cargalas al auditar/arreglar):
      hardcodeado que rompa dark mode.
    - **Command palette ⌘K** en vez de un buscador decorativo.
    - **Match al modelo mental**: dato temporal → calendario (no lista); jerárquico → árbol; etc.
+   - **Crear/editar en modal, no formulario inline**: el botón "Nuevo/Crear" abre un modal
+     (o side sheet) con el formulario — NO despliega un form debajo que empuja la lista y
+     mezcla crear con explorar. El modal enfoca la tarea, preserva el contexto de la lista y
+     da límite claro de guardar/cancelar. Reutilizá el modal compartido (con focus-trap,
+     `aria-modal`, Esc y restaurar foco). Matiz: para 1 campo trivial (inline edit) o flujos
+     multi-paso (página propia) el modal puede no ser lo ideal.
 2. **Fan-out por área** para el wiring (mecánico). Dale a cada subagente un recipe explícito + una
    página ya arreglada como referencia. Mantén los edits chicos (los agentes se cuelgan en rewrites
    grandes). Modelo rápido (fable) sirve para el wiring mecánico.

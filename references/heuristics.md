@@ -118,6 +118,7 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Lista para dato temporal | **Match al modelo mental** (calendario/kanban/árbol) | NN#2 |
 | Submit inválido permitido | **Error prevention** (validación inline, disable, guardas) | NN#5 |
 | Todo el detalle de golpe | **Progressive disclosure** (panel/expand bajo demanda) | NN#8, Miller |
+| Form de crear/editar que se despliega inline y empuja la lista | **Modal / dialog focalizado** (o side sheet) con focus-trap, `aria-modal`, Esc y restaurar foco | NN#1, NN#8, Apple/Material dialogs |
 | Confirms modales para todo | **Undo optimista** > confirm (confirm solo si es irreversible) | NN#3 |
 | Spinner mudo para lectores | `role="status"` / `aria-live` | WCAG 4.1.3 |
 
@@ -145,6 +146,10 @@ Recorré cada pantalla:
 18. Empty-states con **CTA** (qué hacer), no texto muerto.
 19. `prefers-reduced-motion` respetado.
 20. Sin **claims falsos** (p.ej. "cifrado" cuando no lo está) — honestidad en el copy.
+21. Los botones **Crear/Nuevo/Editar abren un modal** (o side sheet) con el formulario, no un form
+    que se despliega inline empujando la lista. Excepciones: edición de 1 campo (inline) o flujo
+    multi-paso (página propia). El modal debe tener focus-trap, `aria-modal`, cerrar con Esc y
+    devolver el foco al disparador.
 
 ---
 
