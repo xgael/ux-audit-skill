@@ -61,6 +61,11 @@ Un método de 3 fases:
   HEART, SUS/SEQ, instrumentación mínima y test barato de Krug antes/después.
 - **`references/templates.md`** — prompts verbatim para los subagentes (auditor y wiring) y
   esqueleto del reporte de wave (sistémicos, plan de remediación, métricas, scorecard).
+- **`references/architecture.md`** — arquitectura de información (inventario de rutas,
+  huérfanas, LATCH, amplitud vs profundidad, reestructurar sin romper memoria muscular) y
+  el **remake [R]**: criterios disciplinados para declarar que un objeto no se parcha — se
+  rehace — y el proceso de demolición segura (inventario de paridad, contrato intacto, spec,
+  verificación tarea por tarea, switch).
 
 ## Instalar
 

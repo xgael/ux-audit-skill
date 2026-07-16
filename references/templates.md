@@ -63,6 +63,10 @@ Al terminar: corré {typecheck/build} y reportá qué páginas quedaron y cuále
 1. [H] {patrón} — aparece en {N} pantallas ({lista}) — primitiva: {qué construir}
 ...
 
+## Estructura y remakes (si aplica)
+- [IA] {fallo estructural: huérfanas/LATCH/profundidad} — fix: {reestructura + redirects}
+- [R] {objeto} — criterios {n,n} de architecture.md §B — spec: {10 líneas} — paridad: {N tareas}
+
 ## Hallazgos por módulo
 ### {módulo}
 - [H|M|L] {problema} — `{archivo}:{línea}` — fix: {...}

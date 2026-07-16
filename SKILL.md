@@ -51,6 +51,11 @@ Referencias (cargalas al auditar/arreglar):
 - **`references/templates.md`** — prompts verbatim para subagentes (auditor y wiring) + esqueleto
   del reporte con plan de remediación y scorecard. Usalos tal cual — la deriva entre corridas
   hace incomparables los hallazgos.
+- **`references/architecture.md`** — los 2 escalamientos: **IA/navegación** (inventario de rutas,
+  huérfanas, LATCH, amplitud vs profundidad, reestructurar sin romper memoria muscular) y
+  **remake [R]** (criterios para declarar que un objeto no se parcha — se rehace: densidad de
+  [H], mismatch estructural, costo, deuda de origen — y el proceso de demolición segura con
+  inventario de paridad).
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".
@@ -62,6 +67,9 @@ Referencias (cargalas al auditar/arreglar):
 ### Fase 1 — Auditoría (heurística por módulo + walkthrough por tarea)
 1. Mapea el alcance: lista rutas/páginas/módulos (`router`, `pages/`, sidebar dinámico) **y las
    2-3 tareas críticas del usuario** (las que definen el producto: crear X, cobrar, publicar…).
+   Con el inventario en mano, pasá los checks de IA de `references/architecture.md` §A
+   (huérfanas, LATCH, clicks-a-tarea-crítica, etiquetas) — un fallo de ESTRUCTURA condiciona
+   toda la auditoría posterior y se reporta como hallazgo estructural propio.
 2. **Checks automáticos primero** (si la app corre): ejecutá el script de
    `references/audit-scripts.md` — contraste/focus/targets/scroll-x/autocomplete salen gratis y
    con evidencia; los agentes no gastan juicio en lo medible.
@@ -145,12 +153,18 @@ La severidad no es a ojo — es **impacto × frecuencia × persistencia**:
 - **M**: fricción real y recurrente (sin filtros en lista larga, formato inconsistente, validación
   que castiga, empty state muerto).
 - **L**: pulido (hex vs token, i18n, aria-live) o de baja frecuencia/persistencia.
+- **[R] remake**: el objeto entero incumple — parcharlo es tirar esfuerzo. Se declara SOLO con
+  ≥2 criterios de `references/architecture.md` §B (densidad de [H], mismatch estructural, costo
+  parche ≥ rehacer, deuda de origen) y lleva spec + inventario de paridad. Nunca por estética.
 
 **Orden de remediación** (cuadrante impacto × esfuerzo):
 1. Sistémico + H (una primitiva arregla N pantallas graves) — siempre primero.
 2. **Quick wins**: H/M puntuales de esfuerzo trivial (un label, un autocomplete) — intercalalos,
    dan momentum y goodwill.
-3. Sistémico + M. 4. Puntual + M. Los L al final o como byproduct del wiring.
+3. **Remakes [R]** — después de las primitivas (el objeto nuevo las consume, no las duplica);
+   proceso completo en `references/architecture.md` §B: paridad → contrato intacto → spec →
+   construir → verificar paridad → switch y borrar el viejo.
+4. Sistémico + M. 5. Puntual + M. Los L al final o como byproduct del wiring.
 
 **Scorecard entre waves** (auditorías por etapas): mantené una tabla módulo × dimensión
 (estados/feedback/forms/a11y/copy: ✅/🟡/❌) al final del reporte — la próxima wave arranca de ahí
@@ -169,4 +183,8 @@ accionable. Para el reporte completo de una wave usá el esqueleto C de `referen
 - Arreglar pantalla por pantalla lo que es un patrón transversal.
 - Marcar "listo" sin verificar en la app corriendo (sobre todo cambios visuales).
 - Reescribir lógica que funciona por estética; el hardening es de UX, no refactor gratis.
+  (La excepción disciplinada es el **[R] remake** con sus criterios y proceso —
+  `references/architecture.md` §B; sin criterios cumplidos, es este anti-patrón.)
 - Romper el design system con estilos/hex ad-hoc.
+- Reestructurar navegación/rutas sin redirects ni alias — rompe la memoria muscular y los
+  bookmarks (architecture.md §A).
