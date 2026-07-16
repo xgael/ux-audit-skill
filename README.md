@@ -26,11 +26,15 @@ Un método de 3 fases:
 - **`references/heuristics.md`** — heurísticas de Nielsen (verbatim), principios de
   compañías top (Apple HIG, Material 3, GOV.UK, Shopify Polaris, IBM Carbon, Microsoft
   Fluent), Laws of UX, WCAG (POUR + criterios clave), tabla de fixes canónicos, checklist
-  de ~20 ítems verificables en la app, y fuentes.
-- **`references/books.md`** — canon de libros de diseño (Norman, Krug, Tufte, Few,
-  Wurman/LATCH, Ware, Kahneman, Weinschenk, Lidwell, Bringhurst, Cooper, Wroblewski,
-  Tidwell, Alexander…) con principios accionables + un **"Playbook de claridad"** de 10
-  movimientos para que el usuario procese información limpia y clara.
+  de ~30 ítems verificables en la app (incluye chequeos de Krug —trunk test, clickabilidad,
+  trigger words— y de ética conductual —anti dark patterns—), y fuentes.
+- **`references/books.md`** — canon de libros de diseño (Norman, **Krug** —sección
+  completa: 3 leyes, cómo la gente escanea, trunk test, reservoir of goodwill, testing
+  barato—, Tufte, Few, Wurman/LATCH, Ware, Kahneman, Weinschenk, Lidwell, Bringhurst,
+  Cooper, Wroblewski, Tidwell, Alexander…) con principios accionables, una sección de
+  **diseño conductual / Psychology of UX** (§E: Fogg B=MAP, Hooked, nudge/EAST, Cialdini,
+  sesgos cognitivos y **deceptive/dark patterns** con su ética) y un **"Playbook de
+  claridad"**.
 
 ## Instalar
 
@@ -60,8 +64,10 @@ o en lenguaje natural: "audita y mejora la UX de estos módulos", "usability aud
 ## Fuentes
 
 Heurísticas y principios tomados de sus documentos canónicos (NN/g, Apple HIG, Material 3,
-GOV.UK, Shopify Polaris, IBM Carbon, Microsoft Fluent, W3C WCAG, Laws of UX) y del canon de
-libros de diseño citado en `references/books.md`. Las URLs están al pie de cada referencia.
+GOV.UK, Shopify Polaris, IBM Carbon, Microsoft Fluent, W3C WCAG, Laws of UX), del canon de
+libros de diseño y de la rama de diseño conductual (Fogg Behavior Model, Cialdini, Nudge de
+Thaler/Sunstein, deceptive patterns de Brignull) citados en `references/books.md`. Las URLs
+están al pie de cada referencia.
 
 ## Licencia
 
