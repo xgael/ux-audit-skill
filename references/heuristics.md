@@ -123,6 +123,10 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Form de crear/editar que se despliega inline y empuja la lista | **Modal / dialog focalizado** (o side sheet) con focus-trap, `aria-modal`, Esc y restaurar foco | NN#1, NN#8, Apple/Material dialogs |
 | Confirms modales para todo | **Undo optimista** > confirm (confirm solo si es irreversible) | NN#3 |
 | Spinner mudo para lectores | `role="status"` / `aria-live` | WCAG 4.1.3 |
+| En página profunda no sé dónde estoy / cómo volver | **Trunk test**: persistent nav + nombre de página + "you are here"/breadcrumbs + búsqueda | NN#1, Krug |
+| Nombre de la página ≠ link que la abrió | **Nombrar cada página** y que coincida con el link cliqueado | NN#2, Krug |
+| Happy talk / muro de instrucciones que nadie lee | **Omit needless words**: matar relleno promocional + hacer auto-explicativo | NN#8, Krug 3ª ley |
+| CTA/opción que obliga a "pensar" qué hace o dónde va | **Auto-evidente**: label/affordance que quita el signo de interrogación | Krug 1ª ley, NN#6 |
 
 ---
 
@@ -160,6 +164,16 @@ Recorré cada pantalla:
     caracteres") y valores fuera de rango — el `max` de `<input type=number>` no capea el tecleo y
     `maxLength` no aplica a number, así que debe haber validación real en submit. Forgiving format:
     aceptar variaciones razonables y normalizar (no rechazar por un espacio o un guión).
+24. **Trunk test** (Krug): parate en una página profunda al azar — ¿se ve el **site ID**, el
+    **nombre de la página** (y coincide con el link que la abrió), la **sección/"you are here"**
+    (estado activo/breadcrumbs) y la **búsqueda**? Si no me oriento en 3 s, falla.
+25. **Auto-evidente / omit needless words** (Krug 1ª y 3ª ley): cada CTA y opción se entiende sin
+    pensar (sin signos de interrogación); el copy es escaneable (headings, párrafos cortos,
+    viñetas, términos clave resaltados) y **sin happy talk ni instrucciones que nadie lee** —
+    lo que requería instrucción se rediseña para ser auto-explicativo.
+26. **Reservoir of goodwill** (Krug): recorré la tarea buscando **fugas** — precios/envío/soporte
+    escondidos, formato rígido que castiga al usuario, pedir datos innecesarios, hype en el camino,
+    diseño amateur. Cada fricción drena la reserva; ante la duda, disculparse/ayudar a recuperarse.
 
 ---
 
@@ -173,3 +187,4 @@ Recorré cada pantalla:
 - IBM Carbon — https://carbondesignsystem.com
 - Microsoft Fluent 2 — https://fluent2.microsoft.design
 - WCAG 2.2 quickref — https://www.w3.org/WAI/WCAG22/quickref/
+- Steve Krug, *Don't Make Me Think, Revisited* — ver `references/books.md` §B (3 leyes, trunk test, reservoir of goodwill, testing barato)

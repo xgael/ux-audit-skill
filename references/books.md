@@ -59,12 +59,78 @@ de información, luego usabilidad, cognición, tipografía/IA y patrones.
 - **Errores**: *slips* (acción correcta mal ejecutada) vs *mistakes* (plan equivocado) → **prevenir + permitir recuperar** (undo, forcing functions).
 - → *Aplicar*: botones que parecen botones; feedback en toda acción; undo; validaciones que previenen; estado del sistema visible.
 
-### Don't Make Me Think — Steve Krug
-- **1ª ley: "No me hagas pensar"** — cada pantalla auto-evidente/auto-explicativa.
-- La gente **escanea, no lee**; **satisface** (elige la 1ª opción razonable), **se las arregla** sin entender todo.
-- **Las convenciones son tus amigas**; jerarquía visual clara; **"omití palabras innecesarias"**.
-- Testeo de usabilidad barato ("una mañana al mes") vale más que debates.
-- → *Aplicar*: CTAs obvios, jerarquía visual fuerte, copy mínimo, seguir convenciones (Jakob).
+### Don't Make Me Think — Steve Krug (usabilidad web, sentido común)
+El libro más práctico del canon. Tesis: la usabilidad = **quitar signos de interrogación** de la
+cabeza del usuario. "Cada signo de interrogación suma a la carga cognitiva y distrae de la tarea."
+
+**Las 3 leyes de Krug** (verbatim):
+1. **"Don't make me think!"** — la pantalla debe ser **auto-evidente** (obvia sin pensar); si no se
+   puede, al menos **auto-explicativa** (obvia con un vistazo). Es el criterio de desempate: si algo
+   te hace pensar aunque sea un segundo, está mal.
+2. **"No importa cuántas veces tenga que clickear, mientras cada click sea una decisión
+   irreflexiva e inequívoca"** — el problema no es el número de clicks, es el **esfuerzo mental**
+   por click. Un camino largo de decisiones obvias > un camino corto de decisiones ambiguas.
+3. **"Deshazte de la mitad de las palabras de cada página; luego deshazte de la mitad de lo que
+   queda"** — omití palabras innecesarias. Los dos grandes culpables: **happy talk** (texto
+   auto-promocional de relleno) y **instrucciones** (nadie las lee; hacé la cosa auto-explicativa
+   en su lugar). *Happy talk must die. Instructions must die.*
+
+**Cómo la gente usa la web de verdad** (no como creemos):
+- **Escanea, no lee** — mira la página, escanea algo de texto, clickea el primer link que le sirve.
+  Uso web = "una valla publicitaria pasando a 90 km/h", no un libro.
+- **Satisfices** (Herbert Simon: satisfy+suffice) — elige la **1ª opción razonable**, no la óptima.
+- **Se las arregla** (*muddle through*) — no entiende cómo funciona; usa lo que sea que funcione y
+  sigue. Por qué escanea: está apurada, sabe que no necesita todo, y es buena escaneando.
+
+**Diseñar para el escaneo** (los 6 movimientos):
+1. **Aprovechá las convenciones** — "las convenciones son tus amigas". Innová solo cuando tengas
+   algo demostrablemente mejor; si no, usá el patrón que la gente ya conoce (Jakob).
+2. **Jerarquía visual clara** — más importante = más prominente; lo relacionado se ve relacionado
+   (agrupado); lo anidado muestra qué es parte de qué.
+3. **Dividí la página en áreas** claramente definidas (el ojo sabe dónde mirar según su tarea).
+4. **Hacé obvio qué es clickeable** — que los controles se vean como controles (affordance/Norman).
+5. **Eliminá distracciones** — los 2 culpables: cosas que parpadean/se mueven, y el **desorden**
+   (clutter). "El ruido visual compite con el contenido."
+6. **Formateá para escanear** — muchos encabezados, párrafos cortos, listas con viñetas, resaltar
+   términos clave.
+
+**Navegación — el trunk test**: si te metieran en la cajuela de un auto, te movieran y te soltaran
+en una página cualquiera del sitio, ¿podrías orientarte? En **cualquier** página deben verse:
+**Site ID** (¿de quién es?), **nombre de la página** (¿en qué página estoy? y **el nombre coincide
+con el link que cliqueé**), **secciones/nav primaria**, **nav local** (opciones de este nivel),
+**"you are here"** (dónde estoy en el esquema — estado activo/breadcrumbs) y **búsqueda**.
+
+**Home page / primer contacto** — debe responder de un vistazo 4 preguntas: **¿Qué es esto?
+¿Qué puedo hacer acá? ¿Qué tienen acá? ¿Por qué debería estar acá y no en otro lado?** — más
+**"¿por dónde empiezo?"**. Necesita un **tagline** claro que comunique la propuesta de valor
+(las home mueren por las peleas de territorio → clutter).
+
+**Reservoir of goodwill** (reserva de buena voluntad): cada usuario llega con una reserva; cada
+fricción la **drena**, cada acierto la **rellena**. Si se vacía, se va (o piensa peor de vos).
+- **Drenan**: esconder lo que quiero (precios, envío, teléfono de soporte); castigarme por no
+  hacer las cosas a tu manera (formato rígido de teléfono/tarjeta); pedirme datos que no necesitás;
+  hype/sizzle en mi camino; diseño amateur que erosiona confianza.
+- **Rellenan**: sé qué quiere hacer la gente y hazlo obvio; decime lo que quiero saber; ahorrame
+  pasos; que se note el esfuerzo; anticipá mis preguntas y respondelas; comodidades (ej. versión
+  imprimible); facilitá recuperarse del error; **ante la duda, disculpate**.
+
+**Testing de usabilidad barato** (el capítulo más citado):
+- **1 usuario testeado = 100% mejor que ninguno.** Testear pocos, temprano, seguido > muchos tarde.
+- **3 usuarios, una mañana al mes** basta para encontrar los problemas más graves.
+- Es **cualitativo**: encontrá los peores problemas, arreglalos, repetí. Reclutar usuarios
+  perfectamente representativos está **sobrevalorado** (sirven "más o menos" representativos).
+- **Focus group ≠ usability test.** No existe el "usuario promedio" → la respuesta a casi todo
+  "¿cuál es mejor?" es **"depende"**; se sale del debate religioso **testeando**, no discutiendo.
+
+**Mobile** (ed. *Revisited*): las mismas leyes aplican. La restricción de pantalla **obliga a
+priorizar** (no metas todo con calzador; "responsive" no es excusa para amontonar). Cuidado con la
+**tiranía de los targets diminutos** (áreas táctiles muy chicas). Mantené los signifiers aunque
+recortes cromo.
+
+- → *Aplicar*: CTAs auto-evidentes y jerarquía visual fuerte; copy mínimo (matar happy talk e
+  instrucciones); seguir convenciones; correr el **trunk test** en páginas profundas (¿me oriento?);
+  nombre de página = link clickeado; landing que responde las 4 preguntas; auditar cada fricción
+  como una fuga del *reservoir of goodwill*; y validar dudas con **testing barato**, no con debate.
 
 ### About Face — Alan Cooper
 - **Diseño dirigido por objetivos** (goal-directed) + **personas**; diseñar para el objetivo, no la tarea.
