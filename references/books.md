@@ -127,10 +127,41 @@ priorizar** (no metas todo con calzador; "responsive" no es excusa para amontona
 **tiranía de los targets diminutos** (áreas táctiles muy chicas). Mantené los signifiers aunque
 recortes cromo.
 
+**Más principios de alto valor** (ed. *Revisited*):
+- **"Clarity trumps consistency"** (verbatim) — si un pequeño quiebre de consistencia hace algo
+  **mucho más claro**, elegí la claridad. Es el matiz de Krug sobre NN#4: consistencia al servicio
+  del entendimiento, no como dogma.
+- **No rompas el botón Back** — "es la función más usada de la web; mientras el Back funcione, los
+  errores no importan mucho". No abras ventanas/pestañas nuevas gratis (rompen el Back), y el link
+  **Home es la salida de emergencia definitiva** → siempre visible y obvio.
+- **Hacé obvio qué es clickeable** — links parecen links, botones parecen botones. El **flat design
+  que borra las pistas** de clickabilidad hace pensar. **Preservá el estado visitado/no-visitado**
+  de los links (le dice al usuario dónde ya estuvo).
+- **Information scent / trigger words** (Pirolli & Card, "information foraging"; los usuarios son
+  *informavores*) — un link que identifica claro su destino da **olor fuerte** y asegura que
+  clickear acerca a la "presa"; labels ambiguos → **pogo-sticking** (entrar-salir a tientas). Nombrá
+  con las **palabras del objetivo del usuario**, no con jerga interna.
+- **Búsqueda siempre disponible** — hay usuarios **search-dominant** (van directo al buscador) y
+  **link-dominant**; serví a ambos. Mantené el buscador simple (no lo satures de scopes/dropdowns).
+- **Persistent navigation = 5 elementos** en toda página: **Site ID, secciones (nav primaria),
+  utilities, búsqueda y Home**. En páginas de formulario, usá una **versión mínima** (Site ID +
+  Home + utilities que ayuden) para no distraer de la tarea.
+- **Primera impresión en milisegundos** — el juicio-relámpago de la gente predice su evaluación
+  posterior; el *above the fold* importa para ese primer vistazo aunque después sí se scrollee.
+- **Definición de usabilidad (Krug)**: "una persona de habilidad y experiencia **promedio (o
+  incluso por debajo)** puede darse cuenta de cómo usar la cosa para su propósito, sin que sea más
+  problema de lo que vale".
+- **Testing — "recruit loosely, grade on a curve"**: no te obsesiones con reclutar usuarios
+  perfectos; lo que buscás primero son los problemas que **cualquiera** encuentra (interfaz
+  confusa). Testeá igual y pesá los hallazgos en consecuencia.
+
 - → *Aplicar*: CTAs auto-evidentes y jerarquía visual fuerte; copy mínimo (matar happy talk e
-  instrucciones); seguir convenciones; correr el **trunk test** en páginas profundas (¿me oriento?);
-  nombre de página = link clickeado; landing que responde las 4 preguntas; auditar cada fricción
-  como una fuga del *reservoir of goodwill*; y validar dudas con **testing barato**, no con debate.
+  instrucciones); seguir convenciones **salvo cuando romperlas da más claridad** (clarity trumps
+  consistency); correr el **trunk test** en páginas profundas (¿me oriento?); nombre de página =
+  link clickeado; nunca romper el **Back** ni abrir ventanas gratis, Home siempre visible; links y
+  botones **obviamente clickeables** (flat no borra pistas) con estado visitado/no-visitado; labels
+  con **trigger words**; búsqueda siempre; landing que responde las 4 preguntas; auditar cada
+  fricción como fuga del *reservoir of goodwill*; y validar dudas con **testing barato**, no debate.
 
 ### About Face — Alan Cooper
 - **Diseño dirigido por objetivos** (goal-directed) + **personas**; diseñar para el objetivo, no la tarea.

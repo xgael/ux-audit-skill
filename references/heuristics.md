@@ -31,6 +31,10 @@ Verbatim + cómo verificarlo en una web-app.
 
 Fuente: https://www.nngroup.com/articles/ten-usability-heuristics/
 
+**Matiz (Krug) — "Clarity trumps consistency":** si un pequeño quiebre de consistencia (NN#4) hace
+algo **mucho más claro**, elegí la claridad. La consistencia sirve al entendimiento, no es dogma.
+Y el desempate de toda decisión de UX: si algo **te hace pensar** aunque sea un segundo, está mal.
+
 ---
 
 ## 2. Laws of UX (psicología aplicada — subconjunto de mayor palanca)
@@ -127,6 +131,9 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Nombre de la página ≠ link que la abrió | **Nombrar cada página** y que coincida con el link cliqueado | NN#2, Krug |
 | Happy talk / muro de instrucciones que nadie lee | **Omit needless words**: matar relleno promocional + hacer auto-explicativo | NN#8, Krug 3ª ley |
 | CTA/opción que obliga a "pensar" qué hace o dónde va | **Auto-evidente**: label/affordance que quita el signo de interrogación | Krug 1ª ley, NN#6 |
+| Ventana nueva / SPA rompe el botón Back; sin salida clara | **No romper el Back** (feature más usada) + **Home siempre visible** como salida de emergencia | Krug, NN#3 |
+| Links/botones no se ven clickeables (flat design plano) | **Affordance de clickabilidad** (links parecen links) + preservar estado **visitado/no-visitado** | Krug, Norman signifiers |
+| Label ambiguo → el usuario no sabe a dónde lleva (pogo-sticking) | **Trigger words / information scent**: nombrar con las palabras del objetivo del usuario | Krug (Pirolli/Card), NN#2 |
 
 ---
 
@@ -174,6 +181,15 @@ Recorré cada pantalla:
 26. **Reservoir of goodwill** (Krug): recorré la tarea buscando **fugas** — precios/envío/soporte
     escondidos, formato rígido que castiga al usuario, pedir datos innecesarios, hype en el camino,
     diseño amateur. Cada fricción drena la reserva; ante la duda, disculparse/ayudar a recuperarse.
+27. **Back nunca se rompe** (Krug): el botón atrás es la función más usada; probá que funcione tras
+    cada acción y que no se abran ventanas/pestañas nuevas gratis. **Home siempre visible y obvio**
+    como salida de emergencia. La nav persistente aparece en toda página (versión mínima en forms).
+28. **Clickabilidad obvia** (Krug/Norman): links parecen links y botones parecen botones — el flat
+    design no debe borrar las pistas; **links visitados ≠ no visitados**; targets táctiles no
+    diminutos en mobile.
+29. **Trigger words + búsqueda** (Krug): los labels usan las **palabras del objetivo del usuario**
+    (information scent), no jerga interna; y hay **buscador disponible y simple** para los usuarios
+    search-dominant.
 
 ---
 
