@@ -2,6 +2,9 @@
 
 Fuente de verdad para la Fase 1 (auditar) y Fase 2 (arreglar). Cada ítem trae su fuente.
 Al auditar, recorré una pantalla contra §1 y §7; al arreglar, usá §6.
+Profundidad por tema: copy/errores/empty states → `writing.md` · estados/performance
+percibida/forms/mobile → `patterns.md` · checks corribles por script → `audit-scripts.md` ·
+psicología/comportamiento y canon de libros → `books.md`.
 
 ---
 

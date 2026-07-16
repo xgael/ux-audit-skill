@@ -27,6 +27,14 @@ Referencias (cargalas al auditar/arreglar):
   nudge/EAST, Cialdini, sesgos y **deceptive/dark patterns** con su ética) + un **"Playbook de
   claridad"**. Consultá esto cuando el problema sea de densidad/organización/legibilidad, o de
   **motivación/comportamiento** (onboarding, retención, conversión, consentimiento).
+- **`references/writing.md`** — UX writing: microcopy, botones/CTAs, el canon de **mensajes de
+  error**, empty states con CTA, copy de formularios. Consultá esto al tocar CUALQUIER texto visible.
+- **`references/patterns.md`** — mecánica de patrones: **matriz de ~7 estados** por vista,
+  **performance percibida** (reglas por duración: skeleton vs spinner vs progreso), **formularios
+  grado Baymard** (timing de validación, autocomplete, error summary) y **mobile/touch** (thumb
+  zone, targets, gestos, hover).
+- **`references/audit-scripts.md`** — checks **automatizables** (Playwright + axe): contraste,
+  focus, targets, scroll-x, autocomplete, consola. Correlo ANTES del fan-out de la Fase 1.
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".
@@ -35,16 +43,26 @@ Referencias (cargalas al auditar/arreglar):
 
 ## El método — 3 fases
 
-### Fase 1 — Auditoría (evaluación heurística, por módulo)
-1. Mapea el alcance: lista rutas/páginas/módulos (`router`, `pages/`, sidebar dinámico).
-2. **Fan-out**: un subagente por ÁREA (agrupa módulos afines). Cada uno lee las páginas + su
+### Fase 1 — Auditoría (heurística por módulo + walkthrough por tarea)
+1. Mapea el alcance: lista rutas/páginas/módulos (`router`, `pages/`, sidebar dinámico) **y las
+   2-3 tareas críticas del usuario** (las que definen el producto: crear X, cobrar, publicar…).
+2. **Checks automáticos primero** (si la app corre): ejecutá el script de
+   `references/audit-scripts.md` — contraste/focus/targets/scroll-x/autocomplete salen gratis y
+   con evidencia; los agentes no gastan juicio en lo medible.
+3. **Fan-out**: un subagente por ÁREA (agrupa módulos afines). Cada uno lee las páginas + su
    client/estilos y evalúa contra el checklist de `references/heuristics.md`. Devuelve hallazgos
    `[H/M/L] problema — file:line — fix concreto`, rankeados. (Correr en background y sintetizar.)
    - Si un subagente muere con 0 tool-uses o texto basura, **relánzalo** — es un fallo transitorio.
-3. Evalúa cada pantalla contra las dimensiones: (1) inputs/fricción, (2) flujo/pasos, (3) cobertura
-   de estados (loading/vacío/error/éxito), (4) feedback, (5) descubribilidad, (6) consistencia con
-   el design system, (7) responsive/a11y.
-4. Sintetiza: **agrupa por PATRÓN sistémico** (qué se repite en N pantallas) antes que por pantalla.
+4. **Cognitive walkthrough de las tareas críticas** (cross-pantalla, complementa lo anterior):
+   simulá un usuario PRIMERIZO recorriendo cada tarea de punta a punta y en cada paso preguntá:
+   (a) ¿sabría que este es el paso correcto hacia su objetivo? (b) ¿VE el control para hacerlo?
+   (c) ¿el label conecta con su intención (trigger words)? (d) ¿el feedback le confirma que
+   avanzó? Un fallo aquí suele ser [H] aunque cada pantalla individual "cumpla" el checklist —
+   la heurística audita pantallas, el walkthrough audita el CAMINO.
+5. Evalúa cada pantalla contra las dimensiones: (1) inputs/fricción, (2) flujo/pasos, (3) cobertura
+   de estados (matriz de ~7 en `references/patterns.md` §A), (4) feedback, (5) descubribilidad,
+   (6) consistencia con el design system, (7) responsive/a11y, (8) copy (`references/writing.md` §7).
+6. Sintetiza: **agrupa por PATRÓN sistémico** (qué se repite en N pantallas) antes que por pantalla.
    Prioriza los patrones sistémicos — arreglar uno arregla docenas.
 
 ### Fase 2 — Remediación (hardening)
@@ -91,11 +109,27 @@ Referencias (cargalas al auditar/arreglar):
   visuales, **levantar la app y verlo** (no solo compilar).
 - Commit por lote con mensaje que explique el patrón arreglado. Rama → PR → merge si el usuario lo pide.
 
-## Severidad
+## Severidad y priorización
+La severidad no es a ojo — es **impacto × frecuencia × persistencia**:
+- **Impacto**: ¿bloquea/rompe la tarea o pierde datos, o solo estorba?
+- **Frecuencia**: ¿lo sufre todo usuario en el flujo principal, o un caso raro?
+- **Persistencia**: ¿molesta CADA vez, o se aprende a esquivar tras la primera?
+
 - **H**: rompe/confunde/bloquea la tarea, o pérdida de datos (undo falso, error disfrazado de vacío,
-  checkout que el popup-blocker mata).
-- **M**: fricción real (sin filtros en lista larga, formato inconsistente, sin recordar en vez de recordar).
-- **L**: pulido (hex vs token, i18n, aria-live).
+  checkout que el popup-blocker mata, dark pattern). Alto impacto aunque la frecuencia sea media.
+- **M**: fricción real y recurrente (sin filtros en lista larga, formato inconsistente, validación
+  que castiga, empty state muerto).
+- **L**: pulido (hex vs token, i18n, aria-live) o de baja frecuencia/persistencia.
+
+**Orden de remediación** (cuadrante impacto × esfuerzo):
+1. Sistémico + H (una primitiva arregla N pantallas graves) — siempre primero.
+2. **Quick wins**: H/M puntuales de esfuerzo trivial (un label, un autocomplete) — intercalalos,
+   dan momentum y goodwill.
+3. Sistémico + M. 4. Puntual + M. Los L al final o como byproduct del wiring.
+
+**Scorecard entre waves** (auditorías por etapas): mantené una tabla módulo × dimensión
+(estados/feedback/forms/a11y/copy: ✅/🟡/❌) al final del reporte — la próxima wave arranca de ahí
+y se ve el progreso.
 
 ## Formato de salida (auditoría)
 ```

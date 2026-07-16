@@ -12,13 +12,16 @@ y remediar** la UX de algo que ya existe.
 
 Un método de 3 fases:
 
-1. **Auditoría** — evaluación heurística por módulo (fan-out de subagentes por área),
-   contra Nielsen + Apple HIG + Material + GOV.UK + WCAG. Hallazgos priorizados
-   `[H/M/L] problema — file:línea — fix`.
+1. **Auditoría** — checks automáticos (Playwright + axe) + evaluación heurística por módulo
+   (fan-out de subagentes por área) contra Nielsen + Apple HIG + Material + GOV.UK + WCAG,
+   + **cognitive walkthrough** de las tareas críticas (audita el camino, no solo las
+   pantallas). Hallazgos priorizados `[H/M/L] problema — file:línea — fix` con severidad
+   **impacto × frecuencia × persistencia**.
 2. **Remediación** — arreglar por **patrón sistémico** con primitivas compartidas
    (undo real, estados loading/error+reintentar/vacío, pop-up-safe, formatters únicos,
-   tokens semánticos, ⌘K, match al modelo mental…).
-3. **Verificación** — build/lint/test + ver en la app (sobre todo cambios visuales).
+   tokens semánticos, ⌘K, match al modelo mental…), en orden sistémico-H → quick wins → M.
+3. **Verificación** — build/lint/test + ver en la app (sobre todo cambios visuales) +
+   scorecard por módulo entre waves.
 
 ## Qué incluye
 
@@ -35,6 +38,15 @@ Un método de 3 fases:
   **diseño conductual / Psychology of UX** (§E: Fogg B=MAP, Hooked, nudge/EAST, Cialdini,
   sesgos cognitivos y **deceptive/dark patterns** con su ética) y un **"Playbook de
   claridad"**.
+- **`references/writing.md`** — UX writing: microcopy, botones/CTAs, canon de mensajes de
+  error (qué+por qué+cómo seguir, sin culpa), empty states con CTA, copy de formularios.
+- **`references/patterns.md`** — mecánica de patrones: matriz de ~7 estados por vista,
+  performance percibida (skeleton vs spinner vs progreso por duración, optimistic UI),
+  formularios grado Baymard (timing de validación, `autocomplete`, error summary) y
+  mobile/touch (thumb zone, targets 44pt, gestos, hover).
+- **`references/audit-scripts.md`** — checks automatizables con Playwright + axe-core
+  (contraste, focus visible, targets, scroll-x, placeholder-como-label, autocomplete,
+  errores de consola) + tabla de qué es automatizable y qué requiere juicio.
 
 ## Instalar
 
