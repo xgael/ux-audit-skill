@@ -47,7 +47,9 @@ Referencias (cargalas al auditar/arreglar):
   human-in-the-loop (output editable, acciones de agente deshacibles), affordances de prompt +
   checklist AI-UX.
 - **`references/metrics.md`** — probar que el fix **mejoró**: task success/time/errores, HEART,
-  SUS/SEQ, instrumentación mínima. Usalo en Fase 3 y para abrir la wave siguiente con el delta.
+  SUS/SEQ, instrumentación mínima, **Core Web Vitals** (LCP/INP/CLS como UX) y disciplina de
+  **A/B** (guardrails, novelty, cuándo NO testear). Usalo en Fase 3 y para abrir la wave
+  siguiente con el delta.
 - **`references/templates.md`** — prompts verbatim para subagentes (auditor y wiring) + esqueleto
   del reporte con plan de remediación y scorecard. Usalos tal cual — la deriva entre corridas
   hace incomparables los hallazgos.
@@ -56,6 +58,16 @@ Referencias (cargalas al auditar/arreglar):
   **remake [R]** (criterios para declarar que un objeto no se parcha — se rehace: densidad de
   [H], mismatch estructural, costo, deuda de origen — y el proceso de demolición segura con
   inventario de paridad).
+- **`references/resilience.md`** — UX cuando el mundo falla: **offline/red intermitente** (cola,
+  retry con backoff), **idempotencia** (doble click ≠ doble cobro), **sesión que expira sin
+  perder trabajo**, security UX (password managers, OTP, passkeys) y **permisos en contexto**
+  con primer. Checklist de 7 pruebas rompibles.
+- **`references/craft.md`** — detectar amateurismo visual y corregirlo con tokens/escalas
+  (Refactoring UI): espaciado 4/8, jerarquía por peso+color, grises con sistema, elevación,
+  alineación, motion con física. Checklist de 8 ítems; los fixes son de ESCALA, no de pantalla.
+- **`references/platform.md`** — **notificaciones** con presupuesto de interrupción (batching,
+  granularidad, badge honesto), **settings** (el mejor es el que no existe), **URL-as-state**
+  (toda vista compartible/bookmarkeable) y **convenciones nativas** iOS/Android/desktop.
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".

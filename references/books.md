@@ -210,6 +210,13 @@ recortes cromo.
 
 ## D. Tipografía y patrones
 
+### Refactoring UI — Adam Wathan & Steve Schoger
+- Craft visual táctico PARA developers: jerarquía por peso+color (no solo tamaño), escala fija
+  de espaciado (empezar con mucho y quitar), grises saturados hacia el hue de marca, sombras de
+  dos capas, menos bordes (espacio/sombra/fondo antes que borde).
+- → *Aplicar*: es el manual de `references/craft.md` — detectar amateurismo y corregirlo con
+  tokens/escalas, no con rediseño.
+
 ### The Elements of Typographic Style — Robert Bringhurst
 - **Measure**: 45–75 caracteres por línea (66 ideal) para lectura cómoda.
 - **Escala modular** de tamaños; **ritmo vertical** (leading consistente); jerarquía por tamaño/peso/espacio.
@@ -305,3 +312,25 @@ Los 10 movimientos de mayor palanca para que el usuario **procese información l
 8. **Cerrar los golfos**: signifiers para saber qué hacer + feedback para saber qué pasó (Norman).
 9. **Diseñar para el Sistema 1**: defaults, reconocimiento, baja fricción, respuesta <400 ms (Kahneman, Doherty).
 10. **Tipografía que honra el contenido**: ~65ch de medida, escala y ritmo, jerarquía real (Bringhurst).
+
+---
+
+## G. Dónde seguir minando — fuentes maestras vivas
+Para nutrir la skill con material nuevo (research, teardowns, benchmarks):
+- **NN/g** — https://www.nngroup.com/articles/ — research original desde 1998; empezar por los
+  study guides anuales.
+- **Baymard Institute** — https://baymard.com/blog — 130.000+ horas de research en
+  forms/checkout/ecommerce; lo más denso en evidencia empírica.
+- **growth.design** — https://growth.design/case-studies — teardowns de psicología aplicada
+  (formato cómic; 1 caso/mes).
+- **Mobbin** — https://mobbin.com — 50k+ screens reales de apps top, organizadas por patrón y
+  flujo; para ver cómo lo resuelven los mejores.
+- **Benchmarks vivos** (usarlos como vara): **Stripe** (forms/pagos/docs), **Linear**
+  (velocidad/teclado/command-first), **Superhuman** (atajos), **Notion** (editores).
+- **WWDC design talks** — https://developer.apple.com/videos/design/ — sesiones anuales de
+  diseño de Apple, gratis.
+- **GOV.UK Service Manual** — https://www.gov.uk/service-manual — el manual completo de diseño
+  de servicios (no solo los 10 principios).
+- **Google PAIR** — https://pair.withgoogle.com/guidebook/ — People + AI (par de `ai-ux.md`).
+- **Laws of UX** — https://lawsofux.com · **Humane by Design** — https://humanebydesign.com —
+  principios éticos.

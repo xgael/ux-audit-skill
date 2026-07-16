@@ -66,6 +66,20 @@ Un método de 3 fases:
   el **remake [R]**: criterios disciplinados para declarar que un objeto no se parcha — se
   rehace — y el proceso de demolición segura (inventario de paridad, contrato intacto, spec,
   verificación tarea por tarea, switch).
+- **`references/resilience.md`** — UX cuando el mundo falla: offline/red intermitente,
+  idempotencia (doble click ≠ doble cobro), sesión que expira sin perder trabajo, security
+  UX (password managers, OTP, passkeys) y permisos del sistema pedidos en contexto.
+- **`references/craft.md`** — craft visual auditable (canon: Refactoring UI): escala de
+  espaciado 4/8, jerarquía por peso+color, grises con sistema, elevación y z-index nombrado,
+  alineación óptica, motion con física — fixes de escala/token, no de pantalla.
+- **`references/platform.md`** — notificaciones con presupuesto de interrupción, settings
+  ("el mejor setting es el que no existe"), deep links y URL-as-state, convenciones nativas
+  iOS/Android/desktop.
+
+Además, `references/metrics.md` incluye Core Web Vitals (LCP/INP/CLS como métricas de UX) y
+disciplina de A/B testing (guardrails, novelty effect, cuándo NO testear), y
+`references/books.md` cierra con un mapa de **fuentes maestras** para seguir nutriendo la
+skill (Baymard, growth.design, Mobbin, WWDC, GOV.UK Service Manual, PAIR…).
 
 ## Instalar
 

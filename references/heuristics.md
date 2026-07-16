@@ -6,8 +6,10 @@ Profundidad por tema: copy/errores/empty states → `writing.md` · estados/perf
 percibida/forms/mobile → `patterns.md` · checks corribles por script → `audit-scripts.md` ·
 onboarding/microinteracciones/journey mapping → `flows.md` · tablas/admin → `admin-tables.md` ·
 features con IA → `ai-ux.md` · impacto medible → `metrics.md` · prompts/reporte → `templates.md` ·
-IA/navegación y remakes [R] → `architecture.md` ·
-psicología/comportamiento y canon de libros → `books.md`.
+IA/navegación y remakes [R] → `architecture.md` · red/sesión/seguridad/permisos →
+`resilience.md` · craft visual (espaciado/tipo/color/motion) → `craft.md` ·
+notificaciones/settings/URLs/nativo → `platform.md` ·
+psicología/comportamiento, canon de libros y fuentes maestras → `books.md`.
 
 ---
 
