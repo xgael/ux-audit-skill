@@ -47,6 +47,10 @@ Un método de 3 fases:
 - **`references/audit-scripts.md`** — checks automatizables con Playwright + axe-core
   (contraste, focus visible, targets, scroll-x, placeholder-como-label, autocomplete,
   errores de consola) + tabla de qué es automatizable y qué requiere juicio.
+- **`references/flows.md`** — el eje temporal de la UX: onboarding (aha moment/activation,
+  learn-by-doing, tours ≤4 pasos, checklist con endowed progress), microinteracciones
+  (Saffer: trigger→rules→feedback→loops&modes) y journey mapping de auditoría (tabla por
+  tarea crítica, peak-end, fricción acumulada, handoffs entre contextos).
 
 ## Instalar
 

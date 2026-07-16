@@ -35,6 +35,11 @@ Referencias (cargalas al auditar/arreglar):
   zone, targets, gestos, hover).
 - **`references/audit-scripts.md`** — checks **automatizables** (Playwright + axe): contraste,
   focus, targets, scroll-x, autocomplete, consola. Correlo ANTES del fan-out de la Fase 1.
+- **`references/flows.md`** — el eje temporal: **onboarding** (aha moment/activation, learn-by-doing,
+  tours ≤4 pasos, checklist con endowed progress), **microinteracciones** (Saffer:
+  trigger→rules→feedback→loops&modes, duraciones), y **journey mapping** de auditoría (tabla por
+  tarea crítica, peak-end, fricción acumulada, handoffs). Consultalo para el cognitive walkthrough
+  y todo lo que cruce pantallas o pase en el tiempo.
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".
@@ -58,7 +63,10 @@ Referencias (cargalas al auditar/arreglar):
    (a) ¿sabría que este es el paso correcto hacia su objetivo? (b) ¿VE el control para hacerlo?
    (c) ¿el label conecta con su intención (trigger words)? (d) ¿el feedback le confirma que
    avanzó? Un fallo aquí suele ser [H] aunque cada pantalla individual "cumpla" el checklist —
-   la heurística audita pantallas, el walkthrough audita el CAMINO.
+   la heurística audita pantallas, el walkthrough audita el CAMINO. Si la tarea cruza ≥3
+   pantallas o ≥2 contextos (web→email→web), formalizalo con la tabla de journey de
+   `references/flows.md` §C (peak-end, fricción acumulada, handoffs). Si el producto tiene
+   signup/primer uso, auditá el onboarding contra `references/flows.md` §A.
 5. Evalúa cada pantalla contra las dimensiones: (1) inputs/fricción, (2) flujo/pasos, (3) cobertura
    de estados (matriz de ~7 en `references/patterns.md` §A), (4) feedback, (5) descubribilidad,
    (6) consistencia con el design system, (7) responsive/a11y, (8) copy (`references/writing.md` §7).
