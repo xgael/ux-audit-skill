@@ -75,6 +75,10 @@ Un método de 3 fases:
 - **`references/platform.md`** — notificaciones con presupuesto de interrupción, settings
   ("el mejor setting es el que no existe"), deep links y URL-as-state, convenciones nativas
   iOS/Android/desktop.
+- **`references/efficiency.md`** — eficiencia de flujo: interaction cost con conteo GOMS/KLM
+  por tarea (pasos, saltos de vista, re-tecleos, ping-pong), los 7 desperdicios Lean-UX,
+  consolidación de vistas (master-detail, workspace de tarea, wizard→form — y cuándo NO),
+  reorden de bloques que sigue al flujo de trabajo y detectores de redundancia.
 
 Además, `references/metrics.md` incluye Core Web Vitals (LCP/INP/CLS como métricas de UX) y
 disciplina de A/B testing (guardrails, novelty effect, cuándo NO testear), y

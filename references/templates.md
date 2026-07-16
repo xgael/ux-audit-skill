@@ -14,7 +14,8 @@ Contexto: {stack, idioma del producto, usuarios objetivo}
 
 Para CADA pantalla evaluá contra estas dimensiones:
 1. Inputs y fricción (validación por tipo, límites reales, forgiving formats)
-2. Flujo/pasos (excise, re-tecleo, handoffs)
+2. Flujo/pasos (excise, re-tecleo, handoffs; contá interaction cost: pasos, saltos de
+   vista, ping-pong lista↔detalle — ¿vistas que deberían consolidarse?)
 3. Estados: ideal/loading/vacío-primerizo/vaciado/sin-resultados/error/parcial
    — el error NUNCA puede verse como vacío; skeleton en cargas
 4. Feedback (ninguna acción silenciosa; undo en destructivas)

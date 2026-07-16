@@ -8,7 +8,8 @@ onboarding/microinteracciones/journey mapping → `flows.md` · tablas/admin →
 features con IA → `ai-ux.md` · impacto medible → `metrics.md` · prompts/reporte → `templates.md` ·
 IA/navegación y remakes [R] → `architecture.md` · red/sesión/seguridad/permisos →
 `resilience.md` · craft visual (espaciado/tipo/color/motion) → `craft.md` ·
-notificaciones/settings/URLs/nativo → `platform.md` ·
+notificaciones/settings/URLs/nativo → `platform.md` · interaction cost/consolidación de
+vistas/redundancias → `efficiency.md` ·
 psicología/comportamiento, canon de libros y fuentes maestras → `books.md`.
 
 ---

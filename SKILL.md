@@ -68,6 +68,11 @@ Referencias (cargalas al auditar/arreglar):
 - **`references/platform.md`** — **notificaciones** con presupuesto de interrupción (batching,
   granularidad, badge honesto), **settings** (el mejor es el que no existe), **URL-as-state**
   (toda vista compartible/bookmarkeable) y **convenciones nativas** iOS/Android/desktop.
+- **`references/efficiency.md`** — bajar el **interaction cost**: conteo GOMS/KLM por tarea
+  (pasos/saltos/re-tecleos/ping-pong), los 7 desperdicios Lean-UX, **consolidación de vistas**
+  (cuándo 3 pantallas deben ser 1: master-detail, workspace de tarea, wizard→form) y su
+  contrapeso anti-mega-pantalla, reorden de bloques que sigue al flujo, detectores de
+  redundancia (la hoja de cálculo al lado = el requerimiento).
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".
@@ -96,10 +101,13 @@ Referencias (cargalas al auditar/arreglar):
    (a) ¿sabría que este es el paso correcto hacia su objetivo? (b) ¿VE el control para hacerlo?
    (c) ¿el label conecta con su intención (trigger words)? (d) ¿el feedback le confirma que
    avanzó? Un fallo aquí suele ser [H] aunque cada pantalla individual "cumpla" el checklist —
-   la heurística audita pantallas, el walkthrough audita el CAMINO. Si la tarea cruza ≥3
-   pantallas o ≥2 contextos (web→email→web), formalizalo con la tabla de journey de
-   `references/flows.md` §C (peak-end, fricción acumulada, handoffs). Si el producto tiene
-   signup/primer uso, auditá el onboarding contra `references/flows.md` §A.
+   la heurística audita pantallas, el walkthrough audita el CAMINO. Mientras recorrés, **contá
+   el costo** (`references/efficiency.md` §A): pasos, saltos de vista, re-tecleos, ping-pong —
+   el conteo convierte "se siente pesado" en un hallazgo defendible y su fix suele ser
+   consolidación/reorden (§B-C). Si la tarea cruza ≥3 pantallas o ≥2 contextos
+   (web→email→web), formalizalo con la tabla de journey de `references/flows.md` §C (peak-end,
+   fricción acumulada, handoffs). Si el producto tiene signup/primer uso, auditá el onboarding
+   contra `references/flows.md` §A.
 5. Evalúa cada pantalla contra las dimensiones: (1) inputs/fricción, (2) flujo/pasos, (3) cobertura
    de estados (matriz de ~7 en `references/patterns.md` §A), (4) feedback, (5) descubribilidad,
    (6) consistencia con el design system, (7) responsive/a11y, (8) copy (`references/writing.md` §7).
