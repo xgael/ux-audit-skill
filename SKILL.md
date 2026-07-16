@@ -40,6 +40,17 @@ Referencias (cargalas al auditar/arreglar):
   trigger→rules→feedback→loops&modes, duraciones), y **journey mapping** de auditoría (tabla por
   tarea crítica, peak-end, fricción acumulada, handoffs). Consultalo para el cognitive walkthrough
   y todo lo que cruce pantallas o pase en el tiempo.
+- **`references/admin-tables.md`** — **tablas enterprise** (filtros con chips, bulk con alcance,
+  inline edit, paginación vs infinite scroll, estado preservado, columnas) y patrones de
+  **admin-app** (disabled-vs-hidden por permisos, dirty state, audit trail). Para ERPs/back-office.
+- **`references/ai-ux.md`** — features con **IA/LLM**: streaming y esperas, incertidumbre/confianza,
+  human-in-the-loop (output editable, acciones de agente deshacibles), affordances de prompt +
+  checklist AI-UX.
+- **`references/metrics.md`** — probar que el fix **mejoró**: task success/time/errores, HEART,
+  SUS/SEQ, instrumentación mínima. Usalo en Fase 3 y para abrir la wave siguiente con el delta.
+- **`references/templates.md`** — prompts verbatim para subagentes (auditor y wiring) + esqueleto
+  del reporte con plan de remediación y scorecard. Usalos tal cual — la deriva entre corridas
+  hace incomparables los hallazgos.
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".
@@ -54,9 +65,11 @@ Referencias (cargalas al auditar/arreglar):
 2. **Checks automáticos primero** (si la app corre): ejecutá el script de
    `references/audit-scripts.md` — contraste/focus/targets/scroll-x/autocomplete salen gratis y
    con evidencia; los agentes no gastan juicio en lo medible.
-3. **Fan-out**: un subagente por ÁREA (agrupa módulos afines). Cada uno lee las páginas + su
-   client/estilos y evalúa contra el checklist de `references/heuristics.md`. Devuelve hallazgos
-   `[H/M/L] problema — file:line — fix concreto`, rankeados. (Correr en background y sintetizar.)
+3. **Fan-out**: un subagente por ÁREA (agrupa módulos afines), con el **prompt template A de
+   `references/templates.md`** rellenado (rutas, design system, dimensiones extra si hay
+   tablas/IA). Cada uno lee las páginas + su client/estilos y evalúa contra el checklist de
+   `references/heuristics.md`. Devuelve hallazgos `[H/M/L] problema — file:line — fix concreto`,
+   rankeados. (Correr en background y sintetizar.)
    - Si un subagente muere con 0 tool-uses o texto basura, **relánzalo** — es un fallo transitorio.
 4. **Cognitive walkthrough de las tareas críticas** (cross-pantalla, complementa lo anterior):
    simulá un usuario PRIMERIZO recorriendo cada tarea de punta a punta y en cada paso preguntá:
@@ -106,15 +119,19 @@ Referencias (cargalas al auditar/arreglar):
      da límite claro de guardar/cancelar. Reutilizá el modal compartido (con focus-trap,
      `aria-modal`, Esc y restaurar foco). Matiz: para 1 campo trivial (inline edit) o flujos
      multi-paso (página propia) el modal puede no ser lo ideal.
-2. **Fan-out por área** para el wiring (mecánico). Dale a cada subagente un recipe explícito + una
-   página ya arreglada como referencia. Mantén los edits chicos (los agentes se cuelgan en rewrites
-   grandes). Modelo rápido (fable) sirve para el wiring mecánico.
+2. **Fan-out por área** para el wiring (mecánico), con el **prompt template B de
+   `references/templates.md`**: recipe explícito + una página ya arreglada como referencia.
+   Mantén los edits chicos (los agentes se cuelgan en rewrites grandes). Modelo rápido (fable)
+   sirve para el wiring mecánico.
 3. Respeta el design system existente (tokens, toasts, convenciones). Precedencia: palabras del
    usuario → sistema del proyecto → tus decisiones.
 
 ### Fase 3 — Verificación
 - Tras CADA lote: typecheck/build + lint. Al final: tests (unit + e2e si hay) y, para cambios
   visuales, **levantar la app y verlo** (no solo compilar).
+- **Impacto medible** (`references/metrics.md`): por tarea crítica, dejá métrica elegida +
+  baseline (o el evento que falta instrumentar). Regla: un fix sistémico [H] debe poder mover
+  task-success/tiempo/errores — si no, cuestioná su prioridad. La wave siguiente abre con el delta.
 - Commit por lote con mensaje que explique el patrón arreglado. Rama → PR → merge si el usuario lo pide.
 
 ## Severidad y priorización
@@ -144,7 +161,9 @@ y se ve el progreso.
 ### <pantalla> (ruta)
 - [H/M/L] <hallazgo> — `archivo:línea` — fix: <arreglo concreto>
 ```
-Al final: `## TOP 3 <área>` con los de mayor impacto. Sin adulaciones, sin scope creep, solo señal accionable.
+Al final: `## TOP 3 <área>` con los de mayor impacto. Sin adulaciones, sin scope creep, solo señal
+accionable. Para el reporte completo de una wave usá el esqueleto C de `references/templates.md`
+(sistémicos → por módulo → journey → plan → métricas → scorecard).
 
 ## Anti-patrones (qué NO hacer)
 - Arreglar pantalla por pantalla lo que es un patrón transversal.

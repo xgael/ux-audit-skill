@@ -4,7 +4,8 @@ Fuente de verdad para la Fase 1 (auditar) y Fase 2 (arreglar). Cada ítem trae s
 Al auditar, recorré una pantalla contra §1 y §7; al arreglar, usá §6.
 Profundidad por tema: copy/errores/empty states → `writing.md` · estados/performance
 percibida/forms/mobile → `patterns.md` · checks corribles por script → `audit-scripts.md` ·
-onboarding/microinteracciones/journey mapping → `flows.md` ·
+onboarding/microinteracciones/journey mapping → `flows.md` · tablas/admin → `admin-tables.md` ·
+features con IA → `ai-ux.md` · impacto medible → `metrics.md` · prompts/reporte → `templates.md` ·
 psicología/comportamiento y canon de libros → `books.md`.
 
 ---

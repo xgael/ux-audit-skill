@@ -51,6 +51,16 @@ Un método de 3 fases:
   learn-by-doing, tours ≤4 pasos, checklist con endowed progress), microinteracciones
   (Saffer: trigger→rules→feedback→loops&modes) y journey mapping de auditoría (tabla por
   tarea crítica, peak-end, fricción acumulada, handoffs entre contextos).
+- **`references/admin-tables.md`** — tablas enterprise (filtros con chips, bulk actions con
+  alcance, inline edit, paginación con estado preservado, columnas gestionables) y patrones
+  de admin-app (disabled-vs-hidden por permisos, dirty state, audit trail).
+- **`references/ai-ux.md`** — UX de features con IA/LLM: streaming y esperas, incertidumbre
+  y confianza, human-in-the-loop (output editable, acciones de agente deshacibles con log),
+  affordances de prompt, checklist AI-UX auditable.
+- **`references/metrics.md`** — probar que el fix mejoró: task success/tiempo/errores,
+  HEART, SUS/SEQ, instrumentación mínima y test barato de Krug antes/después.
+- **`references/templates.md`** — prompts verbatim para los subagentes (auditor y wiring) y
+  esqueleto del reporte de wave (sistémicos, plan de remediación, métricas, scorecard).
 
 ## Instalar
 
