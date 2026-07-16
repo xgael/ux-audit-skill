@@ -3,7 +3,8 @@
 El núcleo del conocimiento sobre diseño y **cómo la gente procesa información de forma
 limpia y clara**. Cada libro: principios verbatim (nombre propio) + cómo aplicarlos al
 auditar/arreglar UI. Ordenado por la pregunta del usuario: primero claridad/procesamiento
-de información, luego usabilidad, cognición, tipografía/IA y patrones.
+de información, luego usabilidad, cognición, tipografía/patrones, **diseño conductual / psychology of UX** (§E)
+y el playbook de síntesis.
 
 ---
 
@@ -225,7 +226,74 @@ recortes cromo.
 
 ---
 
-## E. Playbook de claridad (síntesis accionable de todo lo anterior)
+## E. Diseño conductual y psicología del usuario (Behavioral / Psychology of UX)
+La rama de UX que aplica **psicología cognitiva y conductual**: por qué la gente hace (o no) algo y
+cómo diseñar para ello — **éticamente**. Extiende a Kahneman/Weinschenk (§C) hacia la acción.
+
+### Modelos de comportamiento
+- **Fogg Behavior Model — B = MAP** (BJ Fogg): una conducta ocurre cuando **M**otivación, **A**bilidad
+  (qué tan fácil es) y un **P**rompt (disparador) coinciden en el **mismo momento**; si no ocurre,
+  falta uno. Palanca clave: **subir la Ability (hacerlo más fácil) > subir la motivación** — la
+  motivación fluctúa, la simplicidad es estable. *Tiny Habits*: arrancá con la versión mínima.
+- **Hooked / Gancho** (Nir Eyal): bucle que **forma hábito** → **Trigger → Action → Variable Reward
+  → Investment**; construye sobre FBM (la recompensa variable engancha; la inversión carga el
+  próximo trigger). ⚠️ potente/adictivo → usar con ética (el propio autor escribió *Indistractable*).
+- **COM-B / Behaviour Change Wheel** (Susan Michie): conducta = **Capability + Opportunity + Motivation**.
+- **CREATE Action Funnel** (Stephen Wendel): Cue → Reaction → Evaluation → Ability → Timing →
+  Execution; cada paso es un filtro donde la acción se cae — arreglá el paso que la tira.
+- **Nudge / arquitectura de decisión** (Thaler & Sunstein): el diseño de las opciones (defaults,
+  orden, fricción) guía la elección sin prohibir. **Defaults = la palanca más fuerte** (status-quo bias).
+- **EAST** (Behavioural Insights Team, "Nudge Unit"): para que la conducta ocurra hacela **Easy,
+  Attractive, Social, Timely**.
+- **Self-Determination Theory** (Deci & Ryan): la motivación **intrínseca** nace de **autonomía +
+  competencia + relación**; diseñá para las tres — las recompensas extrínsecas mal usadas la erosionan.
+- **Octalysis** (Yu-kai Chou): gamificación por **8 core drives** (significado épico, logro,
+  empoderamiento, propiedad, influencia social, escasez, imprevisibilidad, evitar pérdida).
+
+### Sesgos y efectos de mayor palanca en UI (Kahneman/Tversky, Cialdini…)
+- **Loss aversion / prospect theory** — perder pesa ~2× ganar; el framing de pérdida moviliza
+  ("no pierdas tu progreso/racha") — usar con mesura, no como chantaje.
+- **Anchoring** — el 1er número ancla la percepción (mostrar el plan caro primero; tachar precio previo).
+- **Framing** — misma info, distinta reacción según cómo se presenta (90% éxito vs 10% falla).
+- **Default effect / status-quo bias** — la opción preseleccionada gana → elegí defaults que sirvan al usuario.
+- **Social proof** (Cialdini) — reseñas, "X personas lo compraron", "más popular".
+- **Scarcity / urgency** (Cialdini) — stock/tiempo limitado, **solo si es real** (falso = dark pattern).
+- **Goal-gradient + endowed progress** — la motivación sube cerca de la meta; barras que arrancan
+  "adelantadas" (2/10, no 0/8) aceleran la finalización.
+- **Zeigarnik** — lo incompleto queda en la memoria → checklist de onboarding, "perfil 80% completo".
+- **Von Restorff (aislamiento)** — lo distinto se recuerda → un **único** CTA/plan primario destacado.
+- **Serial position** (primacy/recency) — lo primero y lo último se recuerdan → clave en los extremos.
+- **Peak-End rule** (Kahneman; ya en Laws of UX) — cuidar el pico y el cierre de la experiencia.
+- **Cognitive load** (intrínseca/extraña/germana, Sweller) — bajar la **carga extraña** (ruido, pasos, decisiones).
+- **Cialdini — 7 principios**: Reciprocidad, Compromiso/Consistencia, Prueba social, Autoridad,
+  Simpatía, Escasez, **Unidad** (identidad compartida).
+- → *Aplicar*: defaults que ayudan, progreso endógeno en onboarding, prueba social real, un CTA
+  primario destacado, framing honesto, y **reducir la fricción de la acción deseada** (Fogg: Ability).
+
+### Ética: persuasión vs manipulación (deceptive / dark patterns)
+La misma psicología puede **ayudar** al usuario a lograr SU objetivo o **explotarlo** en su contra.
+La línea: ¿el diseño sirve al objetivo del usuario, o solo al del negocio a costa suya?
+- **Deceptive patterns** (Harry Brignull, ex "dark patterns", deceptivepatterns.org) — taxonomía
+  clásica de 12: **roach motel** (fácil entrar, difícil cancelar), **confirmshaming** (culpar por
+  rechazar), **forced continuity** (cobro post-trial sin aviso), **hidden costs** (costos al final),
+  **sneak into basket**, **trick questions** (doble negación), **misdirection**, **privacy
+  zuckering**, **nagging**, **bait and switch**, **disguised ads**, **friend spam**.
+- **Presión regulatoria (2024–2026)**: FTC *click-to-cancel* (ataca el roach motel), GDPR + EU DSA
+  y Digital Markets Act penalizan patrones engañosos en consentimiento y cancelación.
+- → *Aplicar en auditoría*: marcá **[H]** cualquier dark pattern — cancelar tan fácil como
+  suscribirse; sin confirmshaming; costos y renovaciones visibles **antes** de pagar; consentimiento
+  **simétrico** (rechazar tan fácil como aceptar). Extiende el "sin claims falsos" (§heurísticas #20).
+
+**Autores/libros de la rama**: **Susan Weinschenk** (*100 Things…*, *How to Get People to Do Stuff*
+— "the Brain Lady"), **BJ Fogg** (*Persuasive Technology*, *Tiny Habits*), **Nir Eyal** (*Hooked*,
+*Indistractable*), **Robert Cialdini** (*Influence*, *Pre-Suasion*), **Thaler & Sunstein** (*Nudge*),
+**Dan Ariely** (*Predictably Irrational*), **Stephen Wendel** (*Designing for Behavior Change*),
+**Richard Shotton** (*The Choice Factory*), **Chris Nodder** (*Evil by Design*), **Harry Brignull**
+(*Deceptive Patterns*).
+
+---
+
+## F. Playbook de claridad (síntesis accionable de todo lo anterior)
 Los 10 movimientos de mayor palanca para que el usuario **procese información limpia y clara**:
 1. **Subir la relación señal/ruido**: borrar tinta/píxeles que no son datos (Tufte, Few, Lidwell).
 2. **Organizar por LATCH** el contenido según cómo lo busca el usuario (Wurman) — temporal→calendario, etc.

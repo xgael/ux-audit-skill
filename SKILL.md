@@ -23,8 +23,10 @@ Referencias (cargalas al auditar/arreglar):
   checklist de ~20 ítems verificables, y fuentes.
 - **`references/books.md`** — canon de libros de diseño (Norman, Krug, Tufte, Few, Wurman/LATCH, Ware,
   Kahneman, Weinschenk, Lidwell, Bringhurst, Cooper, Wroblewski, Alexander…) con sus principios
-  accionables + un **"Playbook de claridad"** de 10 movimientos para que el usuario procese
-  información limpia y clara. Consultá esto cuando el problema sea de densidad/organización/legibilidad.
+  accionables + una sección de **diseño conductual / Psychology of UX** (§E: Fogg B=MAP, Hooked,
+  nudge/EAST, Cialdini, sesgos y **deceptive/dark patterns** con su ética) + un **"Playbook de
+  claridad"**. Consultá esto cuando el problema sea de densidad/organización/legibilidad, o de
+  **motivación/comportamiento** (onboarding, retención, conversión, consentimiento).
 
 ## Cuándo usarla vs no
 - **Sí**: producto/módulos existentes con UX inconsistente o cruda; "revisa y mejora la UX".

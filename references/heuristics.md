@@ -134,6 +134,10 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Ventana nueva / SPA rompe el botón Back; sin salida clara | **No romper el Back** (feature más usada) + **Home siempre visible** como salida de emergencia | Krug, NN#3 |
 | Links/botones no se ven clickeables (flat design plano) | **Affordance de clickabilidad** (links parecen links) + preservar estado **visitado/no-visitado** | Krug, Norman signifiers |
 | Label ambiguo → el usuario no sabe a dónde lleva (pogo-sticking) | **Trigger words / information scent**: nombrar con las palabras del objetivo del usuario | Krug (Pirolli/Card), NN#2 |
+| Onboarding/tarea larga que se abandona por falta de momentum | **Endowed progress + Zeigarnik**: barra que arranca adelantada, checklist de setup | Behavioral, goal-gradient |
+| Demasiada fricción/decisión en la acción deseada | **Subir la Ability + default útil** (Fogg B=MAP; nudge), no empujar motivación | Fogg, Hick, nudge |
+| Cancelar/darse de baja es más difícil que suscribirse (roach motel) | **Simetría de esfuerzo**: cancelar tan fácil como entrar; sin confirmshaming | Deceptive patterns, NN#3 |
+| Escasez/urgencia falsa, costos ocultos, renovación silenciosa | **Honestidad**: escasez real; costos y renovación visibles ANTES de pagar | Deceptive patterns, NN#1 |
 
 ---
 
@@ -190,6 +194,12 @@ Recorré cada pantalla:
 29. **Trigger words + búsqueda** (Krug): los labels usan las **palabras del objetivo del usuario**
     (information scent), no jerga interna; y hay **buscador disponible y simple** para los usuarios
     search-dominant.
+30. **Sin deceptive/dark patterns** (ética conductual): cancelar/rechazar es tan fácil como
+    aceptar (no **roach motel**), sin **confirmshaming**, costos y renovaciones visibles **antes**
+    de pagar, consentimiento **simétrico** y sin casillas-trampa de doble negación. Extiende #20.
+31. **Palancas conductuales al servicio del usuario** (no en su contra): defaults útiles, progreso
+    endógeno (endowed progress/Zeigarnik) en onboarding, prueba social y escasez **reales**; subir
+    la *ability* (menos fricción/pasos) antes que empujar motivación (Fogg B=MAP).
 
 ---
 
@@ -204,3 +214,4 @@ Recorré cada pantalla:
 - Microsoft Fluent 2 — https://fluent2.microsoft.design
 - WCAG 2.2 quickref — https://www.w3.org/WAI/WCAG22/quickref/
 - Steve Krug, *Don't Make Me Think, Revisited* — ver `references/books.md` §B (3 leyes, trunk test, reservoir of goodwill, testing barato)
+- Diseño conductual / Psychology of UX — ver `references/books.md` §E. Fuentes: Fogg Behavior Model https://behaviormodel.org · Nir Eyal *Hooked* · Cialdini *Influence* · Thaler & Sunstein *Nudge* · deceptive/dark patterns https://www.deceptivepatterns.org · FTC click-to-cancel
