@@ -68,6 +68,8 @@ Reglas:
   el sistema formatea, el usuario solo teclea (Postel). Jamás rechazar por espacios/guiones.
 - **No pedir lo que no se necesita** (goodwill): cada campo extra baja conversión. Billing =
   shipping por default (checkbox). No repreguntar lo que ya se sabe (Cooper: excise).
+  Arma formal: **question protocol** (Jarrett, books §B) — por cada campo, ¿quién usa la
+  respuesta y para qué? Sin dueño → el campo muere.
 - **Control correcto por cardinalidad**: 2-5 opciones visibles → radio/segmented (no dropdown);
   ~7+ conocidas → select con búsqueda; fecha de nacimiento → campos de texto (no calendario);
   fecha de cita → calendario (modelo mental).

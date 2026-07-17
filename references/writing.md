@@ -74,9 +74,14 @@ está tecleando (ver `references/patterns.md` §C: reward early, punish late).
 6. Keyword primero en labels/títulos (frontload).
 7. Cero happy talk; cero instrucciones que reemplazan a un diseño auto-evidente (Krug).
 
+Marco de fondo (Redish, books §B): **cada página es una conversación que el usuario inició** —
+títulos/errores/empty states son RESPUESTAS a su pregunta, no anuncios. Y **bite-snack-meal**:
+la misma info en 3 profundidades (titular → resumen → detalle), el usuario elige cuánto comer.
+
 ## Fuentes
 - NN/g Error-Message Guidelines — https://www.nngroup.com/articles/error-message-guidelines/
 - NN/g UX Writing study guide — https://www.nngroup.com/articles/writing-study-guide/
 - GOV.UK content design — https://www.gov.uk/guidance/content-design/writing-for-gov-uk
 - Shopify Polaris content — https://polaris.shopify.com/content
 - Microcopy: The Complete Guide — Kinneret Yifrah
+- Ginny Redish — *Letting Go of the Words* (books §B)

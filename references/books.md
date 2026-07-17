@@ -164,11 +164,84 @@ recortes cromo.
   con **trigger words**; búsqueda siempre; landing que responde las 4 preguntas; auditar cada
   fricción como fuga del *reservoir of goodwill*; y validar dudas con **testing barato**, no debate.
 
+### The Elements of User Experience — Jesse James Garrett
+- Los **5 planos** de la UX, de abstracto a concreto: **Strategy** (necesidades de usuario +
+  objetivos de negocio) → **Scope** (qué features/contenido) → **Structure** (IA + diseño de
+  interacción) → **Skeleton** (layout, nav, ubicación de elementos) → **Surface** (visual).
+- Cada plano depende del de abajo: un fix de Surface no repara un fallo de Structure.
+- → *Aplicar*: **diagnosticá la ALTITUD de cada hallazgo** — ¿es de surface (craft), skeleton
+  (patterns/reorden), structure (architecture/IA), scope (feature sobra/falta) o strategy? El
+  plano dicta el fix: pulir un botón no arregla una vista que no debería existir. Los [R]
+  remakes son típicamente fallos de structure disfrazados de N problemas de surface.
+
+### The Humane Interface — Jef Raskin (el radical de la eficiencia)
+- **Los modos causan errores**: mismo gesto, resultado distinto según estado invisible (Caps
+  Lock, modo edición) → slips inevitables. Eliminá modos o hacelos imposibles de ignorar.
+- **Habituación**: lo repetido se vuelve automático e inconsciente — por eso el confirm
+  repetido NO protege (se clickea en automático); protege el Undo.
+- **Monotonía**: UNA sola forma de lograr cada cosa elimina la decisión de "¿cómo lo hago?" —
+  contraintuitivo pero potente para flujos de trabajo (complementa, no contradice, los atajos).
+- **La atención del usuario es sagrada**: el sistema jamás la roba (popups, focus steal) ni
+  destruye trabajo. Cuantificá la eficiencia de la interfaz (GOMS, teoría de la información):
+  ¿qué fracción del esfuerzo del usuario aporta información nueva al sistema?
+- → *Aplicar*: auditar modos invisibles; confirms habituados → Undo; una vía canónica por
+  tarea; nada que robe foco. Par teórico de `efficiency.md`.
+
+### Designing with the Mind in Mind — Jeff Johnson
+- El puente **ciencia cognitiva → reglas de UI**: cada guideline existe por un mecanismo del
+  cerebro, y conocerlo permite aplicarla con criterio (y defenderla en un hallazgo).
+- **La visión periférica es pobre** → los mensajes de error lejos del punto de mirada NO se
+  ven (por eso: error junto al campo, no solo arriba). **Leemos por saccades** y reconocemos
+  formas de palabra → ALL CAPS y justificado rompen la lectura.
+- **La memoria de trabajo son ~4 items** frescos → no pidas retener info entre pantallas
+  (consolidación, efficiency §B). **Reconocimiento >> recuerdo** (base de NN#6).
+- La atención es un foco estrecho guiado por objetivos: los usuarios ven lo que buscan, no lo
+  que pusiste (banner blindness es estructural, no descuido).
+- → *Aplicar*: cuando un hallazgo se dispute, bajá al mecanismo ("el error a 400px del campo
+  viola visión periférica") — convierte opinión en ciencia.
+
 ### About Face — Alan Cooper
 - **Diseño dirigido por objetivos** (goal-directed) + **personas**; diseñar para el objetivo, no la tarea.
 - Eliminar **excise** (trabajo innecesario que el sistema impone al usuario).
 - "La computadora hace el trabajo": defaults inteligentes, recordar, no re-preguntar.
 - → *Aplicar*: prellenar/heredar datos (handoff), defaults, no exigir re-teclear.
+
+### Forms that Work — Caroline Jarrett & Gerry Gaffney
+- Un formulario tiene **3 capas**: **relación** (¿por qué te daría este dato?), **conversación**
+  (las preguntas, su orden y tono) y **apariencia** (el layout) — la mayoría solo diseña la 3ª.
+- **Question protocol**: por CADA campo documentá quién usa la respuesta, para qué, y qué pasa
+  si no la tenés. Sin respuesta → el campo muere. Es el arma formal contra el form inflado
+  (goodwill: no pedir lo que no se necesita).
+- Preguntas en el orden de la conversación natural, no del schema; las sensibles al final y
+  justificadas ("para enviarte la factura").
+- → *Aplicar*: correr el question protocol en cada form auditado; los campos sin dueño de
+  respuesta son hallazgos [M] de eficiencia.
+
+### Letting Go of the Words — Ginny Redish
+- **Cada página es una conversación** que el usuario inició: respondé su pregunta, no des un
+  discurso. El contenido es diálogo, no documento.
+- **Bite, snack, meal**: la misma info en 3 profundidades — titular (bite), resumen (snack),
+  detalle completo (meal) — y el usuario elige cuánto comer (progressive disclosure aplicado
+  a contenido).
+- Escribí para el escaneo: frases cortas, listas, encabezados que son las preguntas del usuario.
+- → *Aplicar*: par de `writing.md` — títulos/empty states/errores como respuestas a la pregunta
+  que el usuario trae; detalle en capas, no muros.
+
+### Rocket Surgery Made Easy — Steve Krug (el protocolo de testing)
+El "cómo" operativo del testing barato (el "qué" está en *Don't Make Me Think*):
+- **Una mañana al mes**: 3 usuarios × ~50 min, equipo observando en vivo (no video después).
+- **Guión fijo**: bienvenida y "estamos probando el sitio, no a vos" → preguntas de contexto →
+  home tour ("¿qué es esto? ¿qué se puede hacer?") → **tareas** (las críticas, redactadas sin
+  regalar los trigger words de la UI) → debrief.
+- **Thinking aloud**: el usuario narra lo que piensa; el facilitador NO ayuda ni explica —
+  solo "¿qué esperabas que pasara?".
+- **Debrief el mismo día**: cada observador lista los 3 peores problemas → se consolida → se
+  arregla **lo peor primero, con el fix más chico que funcione** ("tweak, don't redesign") —
+  perfectamente alineado con el hardening por patrón de esta skill.
+- **Recruit loosely, grade on a curve** (ya en §B): casi cualquier usuario encuentra los
+  problemas graves.
+- → *Aplicar*: protocolo listo para proponer al usuario cuando el hallazgo esté en disputa o
+  el producto tenga tráfico chico para A/B (metrics §E).
 
 ### Web Form Design / Mobile First — Luke Wroblewski
 - Minimizar campos; **labels top-aligned** (más rápidas de completar); **validación inline**.

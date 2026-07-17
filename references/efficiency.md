@@ -104,4 +104,6 @@ Registrá la fila por tarea (baseline) → rediseñá → contá de nuevo. "De 1
 - NN/g — Interaction cost — https://www.nngroup.com/articles/interaction-cost-definition/
 - Card, Moran & Newell — GOMS/KLM (*The Psychology of Human-Computer Interaction*)
 - Cooper — excise (*About Face*, books §B) · Lidwell — 80/20, performance load (books §C)
+- Raskin — *The Humane Interface* (books §B): modos causan errores, habituación (confirm
+  repetido no protege → Undo), monotonía (UNA vía canónica por tarea), atención sagrada
 - NN/g — Workflow expectations en apps enterprise — https://www.nngroup.com/articles/enterprise-workflows/

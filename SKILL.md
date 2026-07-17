@@ -163,6 +163,12 @@ Referencias (cargalas al auditar/arreglar):
 - Commit por lote con mensaje que explique el patrón arreglado. Rama → PR → merge si el usuario lo pide.
 
 ## Severidad y priorización
+Antes de asignar severidad, diagnosticá la **altitud** del hallazgo (Garrett, 5 planos —
+books §B): ¿surface (craft), skeleton (layout/patterns), structure (IA/interacción), scope
+(feature sobra/falta) o strategy? El plano dicta el fix — pulir un botón no arregla una vista
+que no debería existir; N hallazgos de surface en el mismo objeto suelen ser UNO de structure
+(→ candidato [R]).
+
 La severidad no es a ojo — es **impacto × frecuencia × persistencia**:
 - **Impacto**: ¿bloquea/rompe la tarea o pierde datos, o solo estorba?
 - **Frecuencia**: ¿lo sufre todo usuario en el flujo principal, o un caso raro?

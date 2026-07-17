@@ -37,6 +37,8 @@ Las 3 de ISO 9241 (efectividad/eficiencia/satisfacción), operacionalizadas:
 - Errores de consola/red en producción (ya se auditan en `audit-scripts.md` — dejarlos medidos).
 - **Test de usabilidad barato** (Krug, books §B): 3 usuarios × tareas críticas, antes y después
   de la wave — cualitativo pero suficiente para confirmar que el patrón arreglado ya no traba.
+  Protocolo completo (guión, thinking aloud, debrief, "lo peor primero con el fix más chico"):
+  *Rocket Surgery Made Easy* en books §B.
 
 ## D. Core Web Vitals — la performance ES experiencia
 Los tres números de Google que miden UX percibida (medilos en campo, no solo Lighthouse):
