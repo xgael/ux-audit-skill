@@ -1,0 +1,8 @@
+{
+  "name": "ux-audit",
+  "description": "Auditoría UX + hardening sistémico de productos existentes. Evaluación heurística por módulo (Nielsen + Apple HIG + Material + GOV.UK + WCAG + Laws of UX), remediación por patrón compartido y verificación con métricas.",
+  "author": {
+    "name": "Gael Altamira",
+    "url": "https://github.com/xgael"
+  }
+}

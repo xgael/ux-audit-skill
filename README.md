@@ -25,6 +25,8 @@ Un método de 3 fases:
 
 ## Qué incluye
 
+La skill vive en `skills/ux-audit/` (layout de plugin de Claude Code):
+
 - **`SKILL.md`** — el método, cuándo usarla, severidad, formato de salida, anti-patrones.
 - **`references/heuristics.md`** — heurísticas de Nielsen (verbatim), principios de
   compañías top (Apple HIG, Material 3, GOV.UK, Shopify Polaris, IBM Carbon, Microsoft
@@ -87,16 +89,22 @@ skill (Baymard, growth.design, Mobbin, WWDC, GOV.UK Service Manual, PAIR…).
 
 ## Instalar
 
-Como skill personal (disponible en todos tus proyectos):
+Como plugin (recomendado — updates centralizados vía marketplace):
 
 ```bash
-git clone https://github.com/xgael/ux-audit-skill ~/.claude/skills/ux-audit
+claude plugin marketplace add xgael/ux-audit-skill
+claude plugin install ux-audit@ux-audit
 ```
 
-O como skill de proyecto (solo un repo):
+Los repos que declaran este marketplace en `.claude/settings.json`
+(`extraKnownMarketplaces` + `enabledPlugins`) lo ofrecen instalar solos al abrir
+el proyecto en Claude Code.
+
+Alternativa sin plugin, como skill personal (copia manual, sin updates):
 
 ```bash
-git clone https://github.com/xgael/ux-audit-skill .claude/skills/ux-audit
+git clone --depth 1 https://github.com/xgael/ux-audit-skill /tmp/ux-audit-skill
+cp -r /tmp/ux-audit-skill/skills/ux-audit ~/.claude/skills/ux-audit
 ```
 
 Reiniciá Claude Code y aparece como `/ux-audit`.

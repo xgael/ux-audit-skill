@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "ux-audit",
+  "description": "Auditoría UX + hardening sistémico para productos ya construidos. Nielsen, Apple HIG, Material, GOV.UK, WCAG, Laws of UX + canon de libros de diseño.",
+  "owner": {
+    "name": "Gael Altamira",
+    "url": "https://github.com/xgael"
+  },
+  "plugins": [
+    {
+      "name": "ux-audit",
+      "description": "Auditoría UX + remediación por patrón sistémico (no pantalla por pantalla): heurísticas, hardening, a11y, métricas.",
+      "source": "./",
+      "category": "design"
+    }
+  ]
+}
