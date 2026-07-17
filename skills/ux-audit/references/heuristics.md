@@ -134,6 +134,7 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | `max`/`maxLength` "advisory" que se puede exceder (ej. "máx 8" pero teclea más) | **Enforzar límites de verdad** (validar en submit; `max` de `type=number` NO capea el tecleo) | NN#5 |
 | Todo el detalle de golpe | **Progressive disclosure** (panel/expand bajo demanda) | NN#8, Miller |
 | Form de crear/editar que se despliega inline y empuja la lista | **Modal / dialog focalizado** (o side sheet) con focus-trap, `aria-modal`, Esc y restaurar foco | NN#1, NN#8, Apple/Material dialogs |
+| Detalle de fila (multi-tab / form / matriz) que se expande **inline hacia abajo** empujando la lista (layout shift, scroll fila↔detalle, sin límite claro) | **Side sheet / drawer** deslizante que preserva la lista y enfoca el registro; `role="dialog"`+`aria-modal`+focus-trap+foco restaurado. Expandable-row solo para quick-view de 1-2 datos | NN#1, NN#8, Apple/Material dialogs |
 | Confirms modales para todo | **Undo optimista** > confirm (confirm solo si es irreversible) | NN#3 |
 | Spinner mudo para lectores | `role="status"` / `aria-live` | WCAG 4.1.3 |
 | En página profunda no sé dónde estoy / cómo volver | **Trunk test**: persistent nav + nombre de página + "you are here"/breadcrumbs + búsqueda | NN#1, Krug |

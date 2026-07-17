@@ -38,8 +38,15 @@ grid o módulo de administración. Complementa `patterns.md` (estados/forms) y `
 - **Inline edit** para 1 campo (doble-click o click en celda editable con affordance al hover);
   edición de N campos → modal/side sheet (heurística #21). Enter guarda, Esc cancela, feedback
   de guardado por celda.
-- **Row → detalle**: fila clickeable si existe vista de detalle (y que se note); expandable row
-  o quick-view para vistazo sin perder el contexto de la lista.
+- **Row → detalle**: fila clickeable si existe vista de detalle (y que se note). Para detalle
+  RICO (multi-tab, formularios, matrices) prefiere un **side sheet / drawer** (panel deslizante,
+  usualmente desde la derecha) sobre la **expansión inline hacia abajo**: la expansión inline
+  empuja las filas de abajo, desplaza la lista (layout shift/CLS), obliga a scrollear entre la
+  fila y su detalle, y no da límite claro de "estoy editando ESTE registro". El drawer preserva
+  el contexto de la lista, enfoca la tarea, tiene cierre obvio (Esc/backdrop/X) y no reflowa la
+  tabla. Reserva la expandable-row solo para un **quick-view** de 1-2 datos; en cuanto haya tabs
+  o un formulario, es drawer. El drawer es un diálogo: `role="dialog"` + `aria-modal`, focus-trap
+  y foco restaurado al disparador (misma primitiva que un modal, ver heurística #21).
 
 **Escalar**:
 - **Paginación > infinite scroll en admin-apps**: el operador necesita posición estable
