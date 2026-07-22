@@ -18,7 +18,9 @@ Para CADA pantalla evaluá contra estas dimensiones:
    vista, ping-pong lista↔detalle — ¿vistas que deberían consolidarse?)
 3. Estados: ideal/loading/vacío-primerizo/vaciado/sin-resultados/error/parcial
    — el error NUNCA puede verse como vacío; skeleton en cargas
-4. Feedback (ninguna acción silenciosa; undo en destructivas)
+4. Feedback (ninguna acción silenciosa; undo en destructivas; procesos con inicio/fin
+   actualizan UN toast in place — no toast-por-tick; toasts de entidad con deep link;
+   checks completos en sileo.md §E)
 5. Descubribilidad (auto-evidente, trigger words, clickabilidad)
 6. Consistencia (formatters únicos, tokens, un término = un concepto)
 7. Responsive/a11y (focus visible, labels, contraste, targets, scroll-x)

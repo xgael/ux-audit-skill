@@ -33,6 +33,11 @@ Referencias (cargalas al auditar/arreglar):
   **performance percibida** (reglas por duración: skeleton vs spinner vs progreso), **formularios
   grado Baymard** (timing de validación, autocomplete, error summary) y **mobile/touch** (thumb
   zone, targets, gestos, hover).
+- **`references/sileo.md`** — **feedback vivo**: el modelo Dynamic Island de Apple (estado
+  continuo ≠ notificación, morph in place, deep link, cierre con Undo, heartbeat honesto)
+  trasladado a web con **Sileo** (librería default del stack): API esencial, primitivas
+  canónicas (promise+Undo, live console, proceso largo, branding) y checks auditables de
+  la dimensión Feedback. Consultalo SIEMPRE que toques toasts/notificaciones/procesos.
 - **`references/audit-scripts.md`** — checks **automatizables** (Playwright + axe): contraste,
   focus, targets, scroll-x, autocomplete, consola. Correlo ANTES del fan-out de la Fase 1.
 - **`references/flows.md`** — el eje temporal: **onboarding** (aha moment/activation, learn-by-doing,
@@ -119,6 +124,11 @@ Referencias (cargalas al auditar/arreglar):
    compartidos; luego cablea las páginas. Primitivas canónicas (ver `references/heuristics.md` §Fixes):
    - **Undo real** en toda acción destructiva (soft-delete + endpoint `restaurar`, `onUndo` que
      realmente restaura). Donde el undo sea imposible (valor enmascarado, hard-delete), usa confirm.
+     Implementación default: `sileo.promise` + botón Undo (`references/sileo.md` §D1).
+   - **Capa de feedback vivo (modelo Dynamic Island)** — `references/sileo.md`: mutaciones con
+     `sileo.promise` (un pill que morfea loading→resultado, no toasts sueltos), toasts
+     **accionables** con deep link a la entidad, live console con heartbeat + baseline (cero
+     toast storm al cargar), batching de bursts, cierre con gracia (dismiss ≠ cancelar).
    - **Estados explícitos** loading / error+Reintentar / vacío (hook `useAsyncData` + `<AsyncBoundary>`).
      El error NUNCA debe verse igual que "sin datos".
    - **Pop-up-safe**: abrir pestañas (checkout, PDF, descargas) SÍNCRONO dentro del gesto del click

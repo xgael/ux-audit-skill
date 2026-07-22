@@ -46,6 +46,11 @@ La skill vive en `skills/ux-audit/` (layout de plugin de Claude Code):
   performance percibida (skeleton vs spinner vs progreso por duración, optimistic UI),
   formularios grado Baymard (timing de validación, `autocomplete`, error summary) y
   mobile/touch (thumb zone, targets 44pt, gestos, hover).
+- **`references/sileo.md`** — feedback vivo: el modelo **Dynamic Island / Live Activities**
+  de Apple (estado continuo ≠ notificación, morph in place, tap = deep link, alertar =
+  expandir, cierre con gracia + Undo, staleness honesta) trasladado a web e implementado
+  con **Sileo** (sileo.aaryan.design): API esencial, primitivas canónicas (promise+Undo,
+  live console con heartbeat, proceso largo, branding con tokens) y checks auditables.
 - **`references/audit-scripts.md`** — checks automatizables con Playwright + axe-core
   (contraste, focus visible, targets, scroll-x, placeholder-como-label, autocomplete,
   errores de consola) + tabla de qué es automatizable y qué requiere juicio.
