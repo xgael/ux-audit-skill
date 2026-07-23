@@ -71,8 +71,24 @@ Reglas:
   Arma formal: **question protocol** (Jarrett, books §B) — por cada campo, ¿quién usa la
   respuesta y para qué? Sin dueño → el campo muere.
 - **Control correcto por cardinalidad**: 2-5 opciones visibles → radio/segmented (no dropdown);
-  ~7+ conocidas → select con búsqueda; fecha de nacimiento → campos de texto (no calendario);
-  fecha de cita → calendario (modelo mental).
+  ~7+ conocidas → **select con búsqueda (combobox type-to-filter)**, NUNCA un `<select>` plano
+  largo que obliga a scrollear y leer todo (elegir "Manager" entre 40 empleados en un `<select>`
+  es fricción real); fecha de nacimiento → campos de texto (no calendario); fecha de cita →
+  calendario (modelo mental). Regla operativa: `<select>` con >~7 `<option>` = candidato a
+  combobox. Para campos de **valor libre con sugerencias** (un puesto que puede no estar en el
+  catálogo) el `<datalist>` nativo es la opción lazy correcta: type-to-search + acepta texto
+  arbitrario, sin librería. El combobox debe abrir la lista al foco (no solo al teclear), filtrar
+  en vivo, permitir limpiar la selección y mostrar "Sin resultados". Construílo una vez como
+  primitiva compartida y reusalo — no un `<select>` distinto por pantalla.
+- **Campos condicionales / dependientes** — cuando el valor de un campo vuelve a otro
+  **imposible o sin sentido**, deshabilitá Y **limpiá** el dependiente (no lo dejes con un valor
+  viejo que se enviaría), con un hint que diga por qué. Ej.: contrato "indefinido" → "fin de
+  contrato" deshabilitado + vaciado ("No aplica en indefinidos"); método de pago "efectivo" →
+  campos de tarjeta ocultos. Es prevención de error (Nielsen #5) + match al modelo mental: la UI
+  refleja qué combinaciones son válidas antes de que el usuario (o el submit) choque con ellas.
+  Preferí **deshabilitar visible** (enseña la relación) sobre ocultar cuando el campo es parte
+  esperada del formulario; ocultá solo si el campo es irrelevante en ese modo. Enforzalo también
+  en submit/servidor — el disabled del cliente es UX, no validación.
 - **Submit**: label específico ("Crear cuenta", no "Enviar"). Preferí botón **habilitado que
   valida al click y enfoca el primer error** sobre botón deshabilitado mudo (el disabled no dice
   POR QUÉ no se puede — si lo usás, mostrá la razón al lado). Deshabilitá DURANTE el submit

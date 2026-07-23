@@ -132,6 +132,8 @@ Mapa problema→técnica→heurística. Estas son las reutilizables entre proyec
 | Submit inválido permitido | **Error prevention** (validación inline, disable, guardas) | NN#5 |
 | Input acepta basura (letras en teléfono, `@`/`*` en nombre, texto donde va número) | **Constrain al dominio del campo**: `inputMode`/`type` correcto + patrón/filtrado + normalizar (forgiving) | NN#5, Postel |
 | `max`/`maxLength` "advisory" que se puede exceder (ej. "máx 8" pero teclea más) | **Enforzar límites de verdad** (validar en submit; `max` de `type=number` NO capea el tecleo) | NN#5 |
+| `<select>` largo (>~7 opciones) que obliga a scrollear/leer todo (ej. elegir "Manager" entre 40) | **Combobox con búsqueda** (type-to-filter, abre al foco, limpiable); `<datalist>` nativo si el campo admite valor libre. Primitiva compartida, no un select por pantalla | NN#6, NN#7, Hick |
+| Campo que sigue editable/enviable aunque otro valor lo vuelve inválido (contrato "indefinido" pero "fin de contrato" activo) | **Campo condicional**: deshabilitar Y limpiar el dependiente + hint del porqué; ocultar solo si es irrelevante en ese modo | NN#5, NN#2 |
 | Todo el detalle de golpe | **Progressive disclosure** (panel/expand bajo demanda) | NN#8, Miller |
 | Form de crear/editar que se despliega inline y empuja la lista | **Modal / dialog focalizado** (o side sheet) con focus-trap, `aria-modal`, Esc y restaurar foco | NN#1, NN#8, Apple/Material dialogs |
 | Detalle de fila (multi-tab / form / matriz) que se expande **inline hacia abajo** empujando la lista (layout shift, scroll fila↔detalle, sin límite claro) | **Side sheet / drawer** deslizante que preserva la lista y enfoca el registro; `role="dialog"`+`aria-modal`+focus-trap+foco restaurado. Expandable-row solo para quick-view de 1-2 datos | NN#1, NN#8, Apple/Material dialogs |
@@ -162,7 +164,7 @@ Recorré cada pantalla:
 7. Listas largas tienen **búsqueda/filtro/orden**; hay **bulk actions** donde aplica.
 8. Hay **⌘K** o navegación rápida; no un buscador falso.
 9. La representación **matchea el modelo mental** (calendario para fechas, etc.).
-10. Formularios: **validación inline**, defaults sensatos, submit deshabilitado si inválido, forgiving formats.
+10. Formularios: **validación inline**, defaults sensatos, submit deshabilitado si inválido, forgiving formats; **selects largos (>~7) con búsqueda** (o `<datalist>` si admite valor libre); **campos dependientes deshabilitados+limpiados** cuando otro valor los invalida.
 11. Estados de control completos (hover/focus/pressed/disabled/error).
 12. Foco de teclado **visible**; todo operable por teclado.
 13. Controles con **label/rol** accesible; spinners con `aria-live`.
